@@ -1,0 +1,23 @@
+function isPalindrome(number) {
+    const numStr = number.toString(); // Convert the number to a string
+    const reversedStr = numStr.split('').reverse().join(''); // Reverse the string
+    return numStr === reversedStr; // Check if it's a palindrome
+}
+
+function findPalindromesInRange(start, end) {
+    const palindromes = [];
+    for (let num = start; num <= end; num++) {
+        if (isPalindrome(num)) {
+            palindromes.push(num);
+        }
+    }
+    return palindromes;
+}
+
+// Example usage
+const startRange = 100;
+const endRange = 200;
+const palindromesInRange = findPalindromesInRange(startRange, endRange);
+
+console.log(`Palindromes in the range ${startRange} to ${endRange}:`);
+console.log(palindromesInRange);
